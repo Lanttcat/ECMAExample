@@ -6,8 +6,8 @@ const basePath = process.cwd();
 const exampleDirPath = `${basePath}/example/`;
 const detailPageTemplateHTML = `${basePath}/detail_page_template.html`;
 const indexTemplateHTML = `${basePath}/index_template.html`;
-const buildDir = `${basePath}/build/`;
-const buildExampleDir = `${basePath}/build/examples/`;
+const docsDir = `${basePath}/docs/`;
+const docsExampleDir = `${basePath}/docs/examples/`;
 
 console.log(exampleDirPath);
 
@@ -34,14 +34,14 @@ const examplesHTML = examples.map((example) => {
 
 });
 
-rimraf.sync(buildDir);
-fs.mkdirSync(buildDir);
-fs.mkdirSync(buildExampleDir);
+rimraf.sync(docsDir);
+fs.mkdirSync(docsDir);
+fs.mkdirSync(docsExampleDir);
 
 examplesHTML.forEach((html) => {
-  fs.writeFileSync(`${buildExampleDir}${html.name}.html`, html.data, {flag: "a"});
+  fs.writeFileSync(`${docsExampleDir}${html.name}.html`, html.data, {flag: "a"});
 });
 
-fs.writeFileSync(`${buildDir}index.html`, indexPageTemplateStr.replace(/{content}/g, renderIndexHTML(examplesHTML)));
+fs.writeFileSync(`${docsDir}index.html`, indexPageTemplateStr.replace(/{content}/g, renderIndexHTML(examplesHTML)));
 
 
