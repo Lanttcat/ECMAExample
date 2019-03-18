@@ -17,7 +17,7 @@ const examples =  fs.readdirSync(exampleDirPath);
 
 function renderIndexHTML(features) {
   return features
-    .map((({name}) => `<p><a href="/examples/${name}.html">${name.replace(/_/, " ")}</a></p>`))
+    .map((({name}) => `<p><a href="/ECMAExample/examples/${name}.html">${name.replace(/_/, " ")}</a></p>`))
     .join("\n");
 }
 
