@@ -30,6 +30,15 @@ async function copyHighLightPlugin() {
     }
 }
 
+async function copyStyleFile() {
+    try {
+        await fs.copy(`${basePath}/style`, `${docsDir}style`);
+        console.log('Copy style file success!');
+    } catch (err) {
+        console.error(err)
+    }
+}
+
 const examplesHTML = examples.map((example) => {
   const examplePath = `${exampleDirPath}${example}`;
   const jsExample = fs.readFileSync(examplePath).toString();
@@ -54,4 +63,5 @@ examplesHTML.forEach((html) => {
 fs.writeFileSync(`${docsDir}index.html`, indexPageTemplateStr.replace(/{content}/g, renderIndexHTML(examplesHTML)));
 
 copyHighLightPlugin();
+copyStyleFile();
 

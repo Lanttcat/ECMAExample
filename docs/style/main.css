@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-size: 16px;
+}
+
+.main-index {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.list-wrapper {
+    margin: 2rem;
+    min-width: 1024px;
+}
+
+.main-ex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.code-wrapper {
+    min-width: 1024px;
+}
+
+.code-self {
+    padding: 1rem 2rem;
+}
