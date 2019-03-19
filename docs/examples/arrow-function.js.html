@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>arrow-function.js</title>
-</head>
-<body>
-// arrow function
+    <link rel="stylesheet" href="../libs/highlight/styles/default.css">
+  </head>
+  <body>
+  <div>
+    <pre>
+      <code class="javascript">
+        // arrow function
 
 // 1. 基本使用
 const baseFunc1 = () => {
@@ -40,5 +44,16 @@ setTimeout(() => {
 }, 0);
 
 
-</body>
+      </code>
+    </pre>
+  </div>
+  </body>
+  <script src="../libs/highlight/highlight.pack.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+          document.querySelectorAll('pre code').forEach((block) => {
+              hljs.highlightBlock(block);
+          });
+      });
+  </script>
 </html>
