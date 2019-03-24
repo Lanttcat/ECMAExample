@@ -1,13 +1,18 @@
 // Class basic use
 
-class A {
+class Car {
  constructor(data){
    this.data = data;
  }
-  testMethod() {
+ testMethod() {
    console.log(this.data);
  }
+
+  static testStaticThis() {
+    console.log(this);
+  }
 }
 
-const a = new A("test");
-a.testMethod();
+const car = new Car("test");
+car.testMethod();
+Car.testStaticThis();
